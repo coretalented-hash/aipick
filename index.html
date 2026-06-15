@@ -1,0 +1,1290 @@
+<!DOCTYPE html>
+<html lang="ko" class="no-js">
+<head>
+<meta charset="UTF-8" />
+<script>document.documentElement.classList.remove('no-js');document.documentElement.classList.add('js');</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>AIPICK · 코탤 — AI가 추천하는 전문가로 만들어드립니다</title>
+<meta name="description" content="AI가 추천하는 전문가로 만들어드립니다. ChatGPT·Gemini·Claude 시대의 AI 검색 최적화(GEO/AEO) 솔루션, 코탤 AIPICK." />
+<meta name="theme-color" content="#3955c7" />
+
+<!-- Open Graph -->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="AIPICK · 코탤 — AI가 추천하는 전문가로 만들어드립니다" />
+<meta property="og:description" content="AI가 추천하는 전문가로 만들어드립니다. ChatGPT·Gemini·Claude 시대의 AI 검색 최적화(GEO/AEO) 솔루션, 코탤 AIPICK." />
+<meta property="og:locale" content="ko_KR" />
+
+<!-- 구조화 데이터 — AIPICK은 자사 페이지도 AI가 잘 읽도록 최적화합니다 (도메인 연결 후 url/logo를 절대경로로 교체) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "코탤",
+  "alternateName": "COTAL",
+  "slogan": "CORE TALENT",
+  "description": "AI가 추천하는 전문가로 만들어드립니다. ChatGPT·Gemini·Claude 시대의 AI 검색 최적화(GEO/AEO) 솔루션 AIPICK을 제공합니다.",
+  "logo": "assets/cotal-logo-blue.png",
+  "email": "help@cotal.kr",
+  "makesOffer": {
+    "@type": "Offer",
+    "itemOffered": {
+      "@type": "Service",
+      "name": "AIPICK",
+      "serviceType": "AI 검색 최적화(GEO/AEO) 마케팅 대행",
+      "areaServed": "KR",
+      "description": "변호사·세무사·의사·치과·한의사·자영업을 위한 AI 추천 최적화."
+    }
+  }
+}
+</script>
+
+<link rel="icon" type="image/png" href="assets/cotal-logo-blue.png" />
+
+<!-- Pretendard (Korean web font) -->
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+
+<style>
+/* =========================================================
+   COTAL · AIPICK Landing — Design System
+   Brilliant Blue #3955c7 · Silver Gray #f7f7f7
+   ========================================================= */
+:root{
+  --blue:#3955c7;
+  --blue-600:#3149aa;
+  --blue-700:#28398a;
+  --blue-900:#161d44;
+  --blue-950:#0f1430;
+  --blue-tint:#eef1fc;
+  --blue-tint-2:#e2e8fb;
+  --silver:#f7f7f7;
+  --ink:#14181f;
+  --ink-2:#2b3138;
+  --muted:#5b6573;
+  --muted-2:#646d7c;
+  --line:#e7e9ee;
+  --line-2:#dfe3ea;
+  --white:#ffffff;
+  --green:#1aa260;
+  --amber:#e0962a;
+  --red:#dc4a4a;
+
+  --radius-sm:10px;
+  --radius:16px;
+  --radius-lg:24px;
+  --radius-xl:32px;
+
+  --shadow-xs:0 1px 2px rgba(20,24,31,.06);
+  --shadow-sm:0 2px 8px rgba(20,24,31,.06);
+  --shadow:0 10px 30px rgba(20,24,31,.08);
+  --shadow-lg:0 24px 60px rgba(20,24,31,.12);
+  --shadow-blue:0 18px 44px rgba(57,85,199,.30);
+
+  --container:1180px;
+  --ease:cubic-bezier(.16,1,.3,1);
+
+  --font:'Pretendard','Pretendard Variable',-apple-system,BlinkMacSystemFont,'Apple SD Gothic Neo','Segoe UI',Roboto,'Helvetica Neue','Malgun Gothic',sans-serif;
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  font-family:var(--font);
+  color:var(--ink);
+  background:var(--white);
+  line-height:1.65;
+  letter-spacing:-.01em;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+  overflow-x:hidden;
+}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+button{font-family:inherit;cursor:pointer;border:none;background:none}
+ul{list-style:none}
+
+.container{width:100%;max-width:var(--container);margin:0 auto;padding:0 24px}
+section{position:relative}
+.bg-silver{background:var(--silver)}
+.bg-tint{background:linear-gradient(180deg,#f4f6fd 0%,#fbfcff 100%)}
+
+/* ---------- Typography helpers ---------- */
+.eyebrow{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:13px;font-weight:700;letter-spacing:.04em;
+  color:var(--blue);text-transform:uppercase;
+}
+.eyebrow::before{content:"";width:18px;height:2px;background:var(--blue);border-radius:2px}
+h1,h2,h3{letter-spacing:-.025em;line-height:1.22;font-weight:800}
+.section-head{max-width:760px;margin:0 auto 56px;text-align:center}
+.section-head h2{font-size:clamp(28px,4.4vw,44px);margin:14px 0 16px}
+.section-head p{font-size:clamp(16px,2vw,19px);color:var(--muted);line-height:1.7}
+.text-blue{color:var(--blue)}
+.hl{background:linear-gradient(180deg,transparent 58%,rgba(57,85,199,.18) 58%);padding:0 2px}
+
+/* ---------- Buttons ---------- */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:9px;
+  font-weight:700;font-size:16px;line-height:1;
+  padding:16px 26px;border-radius:999px;
+  transition:transform .25s var(--ease),box-shadow .25s var(--ease),background .2s,color .2s;
+  white-space:nowrap;
+}
+.btn svg{width:18px;height:18px}
+.btn-primary{background:var(--blue);color:#fff;box-shadow:var(--shadow-blue)}
+.btn-primary:hover{transform:translateY(-2px);background:var(--blue-600);box-shadow:0 22px 50px rgba(57,85,199,.40)}
+.btn-ghost{background:#fff;color:var(--ink);border:1.5px solid var(--line-2);box-shadow:var(--shadow-xs)}
+.btn-ghost:hover{transform:translateY(-2px);border-color:var(--blue);color:var(--blue)}
+.btn-light{background:#fff;color:var(--blue)}
+.btn-light:hover{transform:translateY(-2px);box-shadow:var(--shadow-lg)}
+.btn-outline-light{background:rgba(255,255,255,.06);color:#fff;border:1.5px solid rgba(255,255,255,.34)}
+.btn-outline-light:hover{transform:translateY(-2px);background:rgba(255,255,255,.14)}
+.btn-lg{padding:18px 32px;font-size:17px}
+.btn-block{width:100%}
+
+/* ---------- Header / Nav ---------- */
+.header{
+  position:sticky;top:0;z-index:100;
+  background:rgba(255,255,255,.82);
+  backdrop-filter:saturate(180%) blur(14px);
+  -webkit-backdrop-filter:saturate(180%) blur(14px);
+  border-bottom:1px solid transparent;
+  transition:border-color .3s,box-shadow .3s,background .3s;
+}
+.header.scrolled{border-color:var(--line);box-shadow:var(--shadow-sm)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:70px}
+.brand{display:flex;align-items:center;gap:10px}
+.brand img{height:24px;width:auto}
+.brand .svc{
+  font-weight:800;font-size:15px;letter-spacing:.02em;color:var(--ink);
+  padding-left:11px;border-left:1.5px solid var(--line-2);
+}
+.brand .svc b{color:var(--blue)}
+.nav-links{display:flex;align-items:center;gap:34px}
+.nav-links a{font-size:15px;font-weight:600;color:var(--ink-2);transition:color .2s}
+.nav-links a:hover{color:var(--blue)}
+.nav-cta{display:flex;align-items:center;gap:14px}
+.nav-cta .btn{padding:11px 20px;font-size:14.5px}
+.nav-text-link{font-size:14.5px;font-weight:600;color:var(--ink-2);transition:color .2s}
+.nav-text-link:hover{color:var(--blue)}
+.menu-toggle{display:none;width:42px;height:42px;border-radius:12px;align-items:center;justify-content:center;color:var(--ink)}
+.menu-toggle svg{width:24px;height:24px}
+
+/* mobile drawer */
+.mobile-menu{
+  display:none;position:fixed;inset:70px 0 auto 0;z-index:99;
+  background:#fff;border-bottom:1px solid var(--line);box-shadow:var(--shadow);
+  padding:18px 24px 26px;
+}
+.mobile-menu.open{display:block;animation:drop .3s var(--ease)}
+@keyframes drop{from{opacity:0;transform:translateY(-10px)}to{opacity:1;transform:none}}
+.mobile-menu a{display:block;padding:13px 6px;font-size:16px;font-weight:600;border-bottom:1px solid var(--line)}
+.mobile-menu .btn{margin-top:16px;width:100%}
+
+/* ---------- Hero ---------- */
+.hero{
+  position:relative;overflow:hidden;
+  padding:74px 0 90px;
+  background:
+    radial-gradient(1100px 460px at 78% -8%,rgba(57,85,199,.12),transparent 60%),
+    radial-gradient(800px 420px at 8% 8%,rgba(57,85,199,.07),transparent 55%),
+    linear-gradient(180deg,#fbfcff 0%,#ffffff 70%);
+}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}
+.hero-eyebrow{
+  display:inline-flex;align-items:center;gap:8px;
+  background:var(--blue-tint);color:var(--blue);
+  font-size:13.5px;font-weight:700;padding:8px 15px;border-radius:999px;margin-bottom:22px;
+}
+.hero-eyebrow .dot{width:7px;height:7px;border-radius:50%;background:var(--blue);box-shadow:0 0 0 4px rgba(57,85,199,.18)}
+.hero h1{font-size:clamp(32px,5vw,54px);line-height:1.16;margin-bottom:22px}
+.hero h1 .accent{color:var(--blue)}
+.hero-sub{font-size:clamp(16px,2.2vw,20px);color:var(--muted);max-width:540px;margin-bottom:30px;line-height:1.7}
+.hero-actions{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:30px}
+.hero-trust{display:flex;align-items:center;gap:18px;flex-wrap:wrap;color:var(--muted-2);font-size:14px;font-weight:600}
+.hero-trust .star{color:var(--amber);letter-spacing:1px}
+.hero-trust .sep{width:4px;height:4px;border-radius:50%;background:var(--line-2)}
+
+.pills{display:flex;flex-wrap:wrap;gap:9px;margin-top:34px}
+.pill{
+  font-size:13.5px;font-weight:600;color:var(--ink-2);
+  background:#fff;border:1px solid var(--line-2);padding:8px 15px;border-radius:999px;
+  box-shadow:var(--shadow-xs);transition:transform .2s,border-color .2s,color .2s;
+}
+.pill:hover{transform:translateY(-2px);border-color:var(--blue);color:var(--blue)}
+
+/* Hero chat mockup */
+.chat-card{
+  background:#fff;border:1px solid var(--line);border-radius:var(--radius-lg);
+  box-shadow:var(--shadow-lg);padding:22px;position:relative;
+}
+.chat-card::before{
+  content:"";position:absolute;inset:-1px;border-radius:var(--radius-lg);
+  background:linear-gradient(135deg,rgba(57,85,199,.35),transparent 40%);
+  -webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);
+  -webkit-mask-composite:xor;mask-composite:exclude;padding:1px;pointer-events:none;
+}
+.chat-card--bare{box-shadow:none;border:none;padding:0}
+.chat-card--bare::before{display:none}
+.chat-top{display:flex;align-items:center;gap:10px;padding-bottom:16px;border-bottom:1px solid var(--line);margin-bottom:16px}
+.chat-ai-badge{
+  width:34px;height:34px;border-radius:10px;display:grid;place-items:center;
+  background:var(--blue);color:#fff;font-weight:800;font-size:15px;
+}
+.chat-top .name{font-weight:700;font-size:14.5px}
+.chat-top .status{font-size:12px;color:var(--muted-2)}
+.chat-q{
+  align-self:flex-end;margin-left:auto;max-width:88%;
+  background:var(--blue);color:#fff;font-size:14.5px;font-weight:500;
+  padding:11px 16px;border-radius:16px 16px 4px 16px;margin-bottom:14px;width:fit-content;
+}
+.chat-a{
+  background:var(--silver);border-radius:4px 16px 16px 16px;padding:15px 16px;font-size:14px;color:var(--ink-2);
+}
+.chat-a .lead{font-weight:600;margin-bottom:11px;color:var(--ink)}
+.chat-a ol{margin:0;padding-left:2px;display:flex;flex-direction:column;gap:9px}
+.chat-a li{display:flex;align-items:center;gap:10px}
+.chat-a li .rank{width:22px;height:22px;border-radius:7px;background:#fff;border:1px solid var(--line-2);display:grid;place-items:center;font-weight:700;font-size:12px;color:var(--blue);flex:none}
+.chat-callout{
+  margin-top:13px;display:flex;align-items:center;gap:10px;
+  background:#fff;border:1px dashed var(--red);color:var(--red);
+  font-size:13px;font-weight:700;padding:11px 14px;border-radius:12px;
+}
+.chat-callout svg{width:18px;height:18px;flex:none}
+.float-tag{
+  position:absolute;right:-14px;bottom:30px;
+  background:#fff;border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow);
+  padding:10px 14px;font-size:12.5px;font-weight:700;display:flex;align-items:center;gap:8px;
+}
+.float-tag .dot{width:9px;height:9px;border-radius:50%;background:var(--red);animation:pulse 1.6s infinite}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(220,74,74,.4)}50%{box-shadow:0 0 0 7px rgba(220,74,74,0)}}
+
+/* ---------- Generic section padding ---------- */
+.sec{padding:96px 0}
+.sec-sm{padding:64px 0}
+
+/* ---------- Problem hook ---------- */
+.hook{text-align:center}
+.hook h2{font-size:clamp(26px,4vw,40px);margin-bottom:34px}
+.query-chips{display:flex;flex-wrap:wrap;gap:13px;justify-content:center;margin-bottom:34px}
+.query-chip{
+  display:inline-flex;align-items:center;gap:10px;
+  background:#fff;border:1px solid var(--line-2);border-radius:999px;
+  padding:13px 22px;font-size:15.5px;font-weight:600;color:var(--ink-2);box-shadow:var(--shadow-sm);
+}
+.query-chip .q{color:var(--blue);font-weight:800}
+.hook .note{font-size:17px;color:var(--muted);margin-bottom:28px}
+
+/* ---------- Credibility band ---------- */
+.cred-band{background:var(--blue-950);color:#fff;padding:30px 0}
+.cred-inner{display:flex;align-items:center;justify-content:center;gap:48px;flex-wrap:wrap;text-align:center}
+.cred-item{display:flex;align-items:center;gap:14px}
+.cred-item .num{font-size:30px;font-weight:800;color:#fff;line-height:1}
+.cred-item .lab{font-size:14.5px;color:rgba(255,255,255,.72);text-align:left;font-weight:500;max-width:160px}
+.cred-sep{width:1px;height:40px;background:rgba(255,255,255,.16)}
+
+/* ---------- Stats grid (지금 일어나고 있는 일) ---------- */
+.now-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.now-mock{
+  background:#fff;border:1px solid var(--line);border-radius:var(--radius-lg);box-shadow:var(--shadow-lg);
+  padding:24px;
+}
+.stats-4{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.stat-card{
+  background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:26px 24px;
+  box-shadow:var(--shadow-sm);transition:transform .3s var(--ease),box-shadow .3s var(--ease);
+}
+.stat-card:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+.stat-card .big{font-size:clamp(34px,5vw,46px);font-weight:800;color:var(--blue);line-height:1;letter-spacing:-.03em}
+.stat-card .big.warn{color:var(--red)}
+.stat-card .desc{margin-top:12px;font-size:14.5px;color:var(--muted);line-height:1.55;font-weight:500}
+
+/* ---------- Industry cards ---------- */
+.ind-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.ind-card{
+  background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:28px 26px;
+  box-shadow:var(--shadow-sm);transition:transform .3s var(--ease),box-shadow .3s var(--ease),border-color .3s;
+}
+.ind-card:hover{transform:translateY(-5px);box-shadow:var(--shadow);border-color:var(--blue-tint-2)}
+.ind-icon{width:48px;height:48px;border-radius:14px;background:var(--blue-tint);color:var(--blue);display:grid;place-items:center;margin-bottom:18px}
+.ind-icon svg{width:25px;height:25px}
+.ind-card h3{font-size:19px;margin-bottom:10px}
+.ind-card p{font-size:14.5px;color:var(--muted);margin-bottom:18px;line-height:1.6}
+.ind-q{display:flex;flex-direction:column;gap:8px}
+.ind-q li{
+  display:flex;align-items:center;gap:9px;font-size:13.5px;color:var(--ink-2);font-weight:500;
+  background:var(--silver);border-radius:9px;padding:9px 12px;
+}
+.ind-q li svg{width:14px;height:14px;color:var(--blue);flex:none}
+
+/* ---------- Solution steps ---------- */
+.sol-list{display:flex;flex-direction:column;gap:22px;max-width:960px;margin:0 auto}
+.sol-step{
+  display:grid;grid-template-columns:88px 1fr auto;gap:28px;align-items:center;
+  background:#fff;border:1px solid var(--line);border-radius:var(--radius-lg);padding:30px 34px;
+  box-shadow:var(--shadow-sm);transition:transform .3s var(--ease),box-shadow .3s var(--ease);
+}
+.sol-step:hover{transform:translateY(-3px);box-shadow:var(--shadow)}
+.sol-num{
+  width:72px;height:72px;border-radius:20px;display:grid;place-items:center;
+  background:linear-gradient(135deg,var(--blue),var(--blue-700));color:#fff;
+  font-size:26px;font-weight:800;box-shadow:var(--shadow-blue);
+}
+.sol-body h3{font-size:21px;margin-bottom:9px}
+.sol-body p{font-size:15px;color:var(--muted);line-height:1.65}
+.sol-result{
+  flex:none;max-width:260px;display:flex;align-items:flex-start;gap:10px;
+  background:var(--blue-tint);border-radius:14px;padding:14px 16px;
+  font-size:13.5px;font-weight:600;color:var(--blue-700);line-height:1.5;
+}
+.sol-result svg{width:18px;height:18px;color:var(--green);flex:none;margin-top:1px}
+
+/* ---------- Process (3단계) ---------- */
+.proc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.proc-card{
+  position:relative;background:#fff;border:1px solid var(--line);border-radius:var(--radius-lg);
+  padding:34px 30px;box-shadow:var(--shadow-sm);transition:transform .3s var(--ease),box-shadow .3s var(--ease);
+}
+.proc-card:hover{transform:translateY(-5px);box-shadow:var(--shadow)}
+.proc-badge{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:700;color:var(--blue);background:var(--blue-tint);padding:6px 13px;border-radius:999px;margin-bottom:18px}
+.proc-card h3{font-size:21px;margin-bottom:11px}
+.proc-card p{font-size:14.5px;color:var(--muted);line-height:1.65;margin-bottom:18px}
+.proc-tag{display:inline-flex;align-items:center;gap:8px;font-size:13.5px;font-weight:700;color:var(--ink);background:var(--silver);border:1px solid var(--line);padding:9px 14px;border-radius:10px}
+.proc-tag svg{width:16px;height:16px;color:var(--green)}
+.proc-step-num{position:absolute;top:26px;right:30px;font-size:46px;font-weight:800;color:var(--blue-tint);line-height:1}
+
+/* ---------- Why us ---------- */
+.why-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.why-card{
+  background:linear-gradient(160deg,var(--blue-900),var(--blue-950));color:#fff;
+  border-radius:var(--radius-xl);padding:44px 40px;box-shadow:var(--shadow-lg);position:relative;overflow:hidden;
+}
+.why-card::after{content:"";position:absolute;width:300px;height:300px;border-radius:50%;background:radial-gradient(circle,rgba(57,85,199,.5),transparent 70%);top:-100px;right:-80px}
+.why-card .badge{display:inline-block;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);font-size:13px;font-weight:700;padding:7px 14px;border-radius:999px;margin-bottom:22px}
+.why-card h3{font-size:25px;line-height:1.4;margin-bottom:0;position:relative}
+.why-card h3 .big{display:block;font-size:54px;font-weight:800;color:#fff;margin-top:6px}
+.why-card .sig{margin-top:26px;display:flex;align-items:center;gap:13px;position:relative}
+.why-card .sig .av{width:48px;height:48px;border-radius:50%;background:var(--blue);display:grid;place-items:center;font-weight:800;font-size:18px}
+.why-card .sig .who b{display:block;font-size:15.5px}
+.why-card .sig .who span{font-size:13px;color:rgba(255,255,255,.65)}
+.why-body p{font-size:16.5px;color:var(--ink-2);line-height:1.8;margin-bottom:20px}
+.why-body p strong{color:var(--blue);font-weight:800}
+.why-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:30px}
+.why-stat{text-align:center;background:var(--silver);border-radius:var(--radius);padding:22px 10px;border:1px solid var(--line)}
+.why-stat .n{font-size:30px;font-weight:800;color:var(--blue);line-height:1}
+.why-stat .l{font-size:13px;color:var(--muted);margin-top:8px;font-weight:600}
+
+/* ---------- Auto AI Blog ---------- */
+.auto{background:linear-gradient(165deg,var(--blue-950) 0%,var(--blue-900) 55%,var(--blue-700) 130%);color:#fff;overflow:hidden}
+.auto .container{position:relative;z-index:1}
+.auto-head{text-align:center;max-width:720px;margin:0 auto 22px}
+.auto-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.22);color:#fff;font-size:13px;font-weight:700;padding:8px 16px;border-radius:999px;margin-bottom:22px}
+.auto-badge .soon{background:#fff;color:var(--blue);font-size:11px;font-weight:800;padding:2px 8px;border-radius:6px}
+.auto-head h2{font-size:clamp(28px,4.4vw,44px);margin-bottom:18px;color:#fff}
+.auto-head p{font-size:clamp(16px,2vw,18.5px);color:rgba(255,255,255,.78);line-height:1.75}
+.auto-pains{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin:44px 0}
+.auto-pain{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:var(--radius);padding:24px;backdrop-filter:blur(6px)}
+.auto-pain .x{width:36px;height:36px;border-radius:10px;background:rgba(220,74,74,.22);color:#ff9b9b;display:grid;place-items:center;margin-bottom:14px;font-weight:800}
+.auto-pain p{font-size:15px;color:rgba(255,255,255,.88);line-height:1.6;font-weight:500}
+.auto-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin:14px 0 40px;position:relative}
+.auto-step{text-align:center;padding:0 22px;position:relative}
+.auto-step .circ{width:64px;height:64px;border-radius:50%;background:#fff;color:var(--blue);display:grid;place-items:center;font-size:24px;font-weight:800;margin:0 auto 18px;box-shadow:0 10px 30px rgba(0,0,0,.25)}
+.auto-step h4{font-size:18px;margin-bottom:9px;color:#fff}
+.auto-step p{font-size:14px;color:rgba(255,255,255,.72);line-height:1.6}
+.auto-step:not(:last-child)::after{content:"";position:absolute;top:32px;right:-32px;width:64px;height:2px;background:repeating-linear-gradient(90deg,rgba(255,255,255,.4) 0 7px,transparent 7px 14px)}
+.auto-cta{text-align:center}
+.auto-cta .save{display:inline-flex;align-items:center;gap:9px;background:rgba(255,255,255,.1);border:1px dashed rgba(255,255,255,.4);border-radius:999px;padding:9px 18px;font-size:14px;font-weight:700;margin-bottom:22px}
+.auto-cta .save b{color:#ffd27a}
+
+/* ---------- Blog / News ---------- */
+.blog-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:22px;align-items:stretch}
+.blog-feature{
+  grid-row:span 1;background:#fff;border:1px solid var(--line);border-radius:var(--radius-lg);overflow:hidden;
+  box-shadow:var(--shadow-sm);transition:transform .3s var(--ease),box-shadow .3s var(--ease);display:flex;flex-direction:column;
+}
+.blog-feature:hover,.blog-mini:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+.blog-thumb{height:200px;background:linear-gradient(135deg,var(--blue),var(--blue-900));position:relative;display:grid;place-items:center;color:#fff;overflow:hidden}
+.blog-thumb .glyph{font-size:60px;font-weight:800;opacity:.25;letter-spacing:-.04em}
+.blog-thumb .cat{position:absolute;top:16px;left:16px;background:#fff;color:var(--blue);font-size:12px;font-weight:800;padding:6px 12px;border-radius:999px}
+.blog-feature .body{padding:24px 26px;display:flex;flex-direction:column;flex:1}
+.blog-feature h3{font-size:21px;margin-bottom:10px;line-height:1.35}
+.blog-feature p{font-size:14.5px;color:var(--muted);line-height:1.65;flex:1}
+.blog-meta{display:flex;align-items:center;justify-content:space-between;margin-top:18px;font-size:13px;color:var(--muted-2);font-weight:600}
+.blog-meta .more{color:var(--blue);font-weight:700}
+.blog-mini{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:24px;box-shadow:var(--shadow-sm);transition:transform .3s var(--ease),box-shadow .3s var(--ease);display:flex;flex-direction:column}
+.blog-mini .cat{display:inline-block;font-size:12px;font-weight:800;color:var(--blue);background:var(--blue-tint);padding:5px 11px;border-radius:999px;margin-bottom:14px;align-self:flex-start}
+.blog-mini h3{font-size:17px;line-height:1.4;margin-bottom:10px}
+.blog-mini p{font-size:13.5px;color:var(--muted);line-height:1.6;flex:1}
+.blog-mini .date{font-size:12.5px;color:var(--muted-2);font-weight:600;margin-top:16px}
+
+/* ---------- FAQ ---------- */
+.faq-wrap{max-width:840px;margin:0 auto}
+.faq-quote{display:flex;gap:14px;align-items:center;background:var(--blue-tint);border-radius:var(--radius);padding:20px 24px;margin-bottom:32px}
+.faq-quote .av{width:46px;height:46px;border-radius:50%;background:var(--blue);color:#fff;display:grid;place-items:center;font-weight:800;flex:none}
+.faq-quote p{font-size:15px;color:var(--ink-2);line-height:1.6}
+.faq-quote p b{color:var(--blue)}
+.faq-item{background:#fff;border:1px solid var(--line);border-radius:var(--radius);margin-bottom:14px;overflow:hidden;transition:border-color .25s,box-shadow .25s}
+.faq-item.open{border-color:var(--blue-tint-2);box-shadow:var(--shadow-sm)}
+.faq-q{width:100%;display:flex;align-items:center;justify-content:space-between;gap:18px;padding:22px 26px;text-align:left;font-size:17px;font-weight:700;color:var(--ink)}
+.faq-q .ic{width:28px;height:28px;border-radius:50%;background:var(--silver);display:grid;place-items:center;flex:none;transition:transform .3s var(--ease),background .25s,color .25s;color:var(--blue)}
+.faq-item.open .faq-q .ic{transform:rotate(45deg);background:var(--blue);color:#fff}
+.faq-q .ic svg{width:16px;height:16px}
+.faq-a{display:grid;grid-template-rows:0fr;transition:grid-template-rows .42s var(--ease)}
+.faq-item.open .faq-a{grid-template-rows:1fr}
+.faq-a-inner{overflow:hidden;min-height:0;font-size:15px;color:var(--muted);line-height:1.75}
+.faq-a-inner > div{padding:0 26px 24px}
+
+/* ---------- Final CTA ---------- */
+.final{
+  position:relative;overflow:hidden;color:#fff;text-align:center;
+  background:linear-gradient(135deg,var(--blue-700) 0%,var(--blue) 55%,var(--blue-600) 100%);
+}
+.final::before{content:"";position:absolute;inset:0;background:radial-gradient(900px 400px at 50% -20%,rgba(255,255,255,.16),transparent 60%)}
+.final .container{position:relative;z-index:1;padding:104px 24px}
+.final .eyebrow{color:#fff}
+.final .eyebrow::before{background:#fff}
+.final h2{font-size:clamp(30px,5vw,50px);margin:16px 0 18px;color:#fff;line-height:1.2}
+.final p{font-size:clamp(16px,2.2vw,20px);color:rgba(255,255,255,.86);max-width:640px;margin:0 auto 14px;line-height:1.7}
+.final .emph{font-size:17px;font-weight:700;color:#fff;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.22);display:inline-block;padding:12px 22px;border-radius:14px;margin:14px auto 30px}
+.report-form{display:flex;gap:10px;max-width:540px;margin:0 auto 16px;flex-wrap:wrap}
+.report-form input{flex:1;min-width:240px;border:none;border-radius:999px;padding:16px 22px;font-size:15px;font-family:inherit;color:var(--ink);background:#fff;box-shadow:var(--shadow)}
+.report-form input::placeholder{color:var(--muted-2)}
+.report-form input:focus{outline:3px solid rgba(255,255,255,.55);outline-offset:2px}
+.report-form .btn{flex:none}
+.report-hint{font-size:13.5px;color:rgba(255,255,255,.82);margin:0 auto 30px;max-width:520px}
+
+/* ---- 실시간 진단 결과 패널 ---- */
+.diag-result{max-width:640px;margin:4px auto 30px;background:#fff;color:var(--ink);border-radius:var(--radius-lg);box-shadow:var(--shadow-lg);padding:26px 26px 22px;text-align:left}
+.diag-result[hidden]{display:none}
+.diag-head{display:flex;align-items:baseline;justify-content:space-between;gap:12px;flex-wrap:wrap;border-bottom:1px solid var(--line);padding-bottom:14px;margin-bottom:16px}
+.diag-head strong{font-size:16px}
+.diag-head .u{font-size:12.5px;color:var(--muted-2);font-weight:600;word-break:break-all}
+.diag-score{display:flex;align-items:center;gap:18px;margin-bottom:18px}
+.diag-score .n{font-size:48px;font-weight:800;line-height:1;letter-spacing:-.03em}
+.diag-score .n small{font-size:18px;color:var(--muted-2);font-weight:700}
+.diag-score .meta{flex:1}
+.diag-score .meta .g{font-weight:700;font-size:15px;margin-bottom:8px}
+.diag-track{height:10px;border-radius:999px;background:var(--silver);overflow:hidden}
+.diag-track > i{display:block;height:100%;border-radius:999px;transition:width .8s var(--ease)}
+.diag-cats{display:flex;flex-direction:column;gap:10px;margin-bottom:18px}
+.diag-cat{display:grid;grid-template-columns:118px 1fr 50px;align-items:center;gap:10px;font-size:13px}
+.diag-cat .lab{color:var(--ink-2);font-weight:600}
+.diag-cat .bar{height:8px;border-radius:999px;background:var(--silver);overflow:hidden}
+.diag-cat .bar > i{display:block;height:100%;background:var(--blue);border-radius:999px;transition:width .8s var(--ease)}
+.diag-cat .val{text-align:right;color:var(--muted);font-weight:700;font-variant-numeric:tabular-nums}
+.diag-bots{font-size:13px;margin-bottom:16px}
+.diag-bots .sum{font-weight:700;margin-bottom:9px}
+.diag-chips{display:flex;flex-wrap:wrap;gap:6px}
+.diag-chip{font-size:12px;font-weight:600;padding:4px 11px;border-radius:999px;border:1px solid var(--line-2)}
+.diag-chip.ok{color:var(--green);background:#eafaf1;border-color:#cdeed9}
+.diag-chip.no{color:var(--red);background:#fdeef0;border-color:#f7d4d9}
+.diag-recs{font-size:13px;color:var(--ink-2);margin-bottom:18px}
+.diag-recs h4{font-size:13px;margin-bottom:9px;color:var(--ink)}
+.diag-recs ul{display:flex;flex-direction:column;gap:7px}
+.diag-recs li{display:flex;gap:8px;line-height:1.55}
+.diag-recs li::before{content:"›";color:var(--blue);font-weight:800;flex:none}
+.diag-cta{display:flex;gap:10px;flex-wrap:wrap}
+.diag-cta .btn{padding:13px 22px;font-size:14.5px}
+.diag-loading{display:flex;align-items:center;gap:11px;color:var(--muted);font-size:14px;justify-content:center;padding:18px;text-align:center}
+.diag-loading a{color:var(--blue);font-weight:700}
+.diag-spin{width:18px;height:18px;border:2px solid var(--line-2);border-top-color:var(--blue);border-radius:50%;animation:spin .8s linear infinite;flex:none}
+@keyframes spin{to{transform:rotate(360deg)}}
+@media (max-width:640px){.diag-cat{grid-template-columns:96px 1fr 46px}.diag-cta .btn{width:100%}}
+
+.final-actions{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+
+/* ---------- Footer ---------- */
+.footer{background:var(--blue-950);color:rgba(255,255,255,.7);padding:64px 0 36px}
+.footer-top{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px;padding-bottom:40px;border-bottom:1px solid rgba(255,255,255,.1)}
+.footer-brand img{height:26px;margin-bottom:18px}
+.footer-brand .svc{font-weight:700;color:#fff;font-size:15px;margin-bottom:12px}
+.footer-brand p{font-size:14px;color:rgba(255,255,255,.58);line-height:1.7;max-width:320px}
+.footer-col h4{font-size:13px;font-weight:700;color:#fff;text-transform:uppercase;letter-spacing:.05em;margin-bottom:18px}
+.footer-col a,.footer-col p{display:block;font-size:14px;color:rgba(255,255,255,.62);margin-bottom:11px;transition:color .2s}
+.footer-col a:hover{color:#fff}
+.footer-bottom{display:flex;align-items:flex-start;justify-content:space-between;gap:24px;flex-wrap:wrap;padding-top:30px;font-size:12.5px;color:rgba(255,255,255,.62);line-height:1.9}
+.footer-disc{font-size:12px;color:rgba(255,255,255,.5);margin-top:14px;line-height:1.7}
+.footer-bottom .legal{max-width:680px}
+.footer-bottom .legal b{color:rgba(255,255,255,.7);font-weight:600}
+
+/* ---------- Anchor offset for sticky header ---------- */
+section[id],#top{scroll-margin-top:84px}
+
+/* ---------- Scroll reveal (visible by default; only hidden when JS is active) ---------- */
+.reveal{opacity:1;transform:none}
+.js .reveal{opacity:0;transform:translateY(26px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+.js .reveal.visible{opacity:1;transform:none}
+.reveal-d1{transition-delay:.08s}
+.reveal-d2{transition-delay:.16s}
+.reveal-d3{transition-delay:.24s}
+@media (prefers-reduced-motion:reduce){
+  .js .reveal{opacity:1;transform:none;transition:none}
+  html{scroll-behavior:auto}
+  .float-tag .dot{animation:none}
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width:1080px){
+  .ind-grid{grid-template-columns:1fr 1fr}
+  .proc-grid{grid-template-columns:1fr}
+  .blog-grid{grid-template-columns:1fr 1fr}
+  .blog-feature{grid-column:span 2}
+}
+@media (max-width:900px){
+  .nav-links,.nav-cta .desktop-only{display:none}
+  .menu-toggle{display:flex}
+  .hero-grid{grid-template-columns:1fr;gap:44px}
+  .hero-visual{order:-1;max-width:460px;margin:0 auto}
+  .now-grid,.why-grid{grid-template-columns:1fr;gap:36px}
+  .auto-pains{grid-template-columns:1fr}
+  .sol-step{grid-template-columns:64px 1fr;gap:18px}
+  .sol-result{grid-column:1/-1;max-width:none;margin-top:6px}
+  .sol-num{width:56px;height:56px;border-radius:16px;font-size:20px}
+}
+@media (max-width:640px){
+  .sec{padding:64px 0}
+  .container{padding:0 18px}
+  .ind-grid,.stats-4,.auto-steps,.blog-grid{grid-template-columns:1fr}
+  .blog-feature{grid-column:auto}
+  .auto-step:not(:last-child)::after{display:none}
+  .auto-step{margin-bottom:30px}
+  .why-stats{grid-template-columns:1fr 1fr 1fr}
+  .cred-inner{gap:22px}
+  .cred-sep{display:none}
+  .cred-item .num{font-size:24px}
+  .final-actions{flex-direction:column}
+  .final-actions .btn{width:100%}
+  .report-form .btn,.report-form input{width:100%;flex:1 1 100%}
+  .footer-top{grid-template-columns:1fr;gap:30px}
+  .hero-actions .btn{width:100%}
+  .float-tag{display:none}
+  .why-card h3 .big{font-size:42px}
+}
+</style>
+</head>
+<body>
+
+<!-- ===================== HEADER ===================== -->
+<header class="header" id="header">
+  <div class="container nav">
+    <a href="#top" class="brand" aria-label="코탤 AIPICK 홈">
+      <img src="assets/cotal-logo-blue.png" alt="COTAL 코탤" />
+      <span class="svc"><b>AIPICK</b></span>
+    </a>
+    <nav class="nav-links" aria-label="주요 메뉴">
+      <a href="#problem">왜 필요한가</a>
+      <a href="#solution">솔루션</a>
+      <a href="#blog">블로그</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="#cta" class="nav-text-link desktop-only">대행 신청</a>
+      <a href="#auto-ai" class="nav-text-link desktop-only">오토AI 블로그 예약</a>
+      <a href="#cta" class="btn btn-primary">AIPICK 리포트</a>
+      <button class="menu-toggle" id="menuToggle" aria-label="메뉴 열기" aria-expanded="false">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </div>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#problem">왜 필요한가</a>
+    <a href="#solution">솔루션</a>
+    <a href="#blog">블로그</a>
+    <a href="#faq">FAQ</a>
+    <a href="#auto-ai">오토AI 블로그 예약</a>
+    <a href="#cta">대행 신청</a>
+    <a href="#cta" class="btn btn-primary">무료 AIPICK 리포트 받기</a>
+  </div>
+</header>
+
+<span id="top"></span>
+
+<!-- ===================== HERO ===================== -->
+<section class="hero">
+  <div class="container hero-grid">
+    <div class="hero-copy">
+      <span class="hero-eyebrow"><span class="dot"></span>AI 검색 최적화 · GEO / AEO</span>
+      <h1>이제 사람들은 AI에 물어봅니다.<br><span class="accent">당신의 브랜드, AI가 알고 있나요?</span></h1>
+      <p class="hero-sub">ChatGPT·Gemini·Claude가 추천하는 전문가로 만들어드립니다.<br>코탤이 만든 AI 추천 마케팅 솔루션, <b>AIPICK</b>.</p>
+      <div class="hero-actions">
+        <a href="#cta" class="btn btn-primary btn-lg">
+          무료 AIPICK 리포트 받기
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <a href="#solution" class="btn btn-ghost btn-lg">솔루션 살펴보기</a>
+      </div>
+      <div class="hero-trust">
+        <span><span class="star">★★★★★</span> 리뷰 1,000+ · 5점 만점</span>
+        <span class="sep"></span>
+        <span>250개 브랜드 직접 코칭</span>
+      </div>
+      <div class="pills">
+        <span class="pill">변호사</span>
+        <span class="pill">세무사</span>
+        <span class="pill">의사</span>
+        <span class="pill">치과의사</span>
+        <span class="pill">한의사</span>
+        <span class="pill">자영업</span>
+        <span class="pill">중소기업</span>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <div class="chat-card">
+        <div class="chat-top">
+          <div class="chat-ai-badge">AI</div>
+          <div>
+            <div class="name">AI에게 물어봤습니다</div>
+            <div class="status">ChatGPT · Gemini · Claude</div>
+          </div>
+        </div>
+        <div class="chat-q">강남 세무사 추천해줘</div>
+        <div class="chat-a">
+          <div class="lead">이런 곳을 추천해요</div>
+          <ol>
+            <li><span class="rank">1</span> A 세무회계 사무소</li>
+            <li><span class="rank">2</span> B 택스 파트너스</li>
+            <li><span class="rank">3</span> C 세무법인</li>
+          </ol>
+          <div class="chat-callout">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><line x1="12" y1="8" x2="12" y2="13"/><circle cx="12" cy="16.5" r=".6" fill="currentColor"/></svg>
+            내 사무소는 목록에 없습니다
+          </div>
+        </div>
+        <div class="float-tag"><span class="dot"></span>AI 추천에서 누락</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== PROBLEM HOOK ===================== -->
+<section class="sec bg-silver hook" id="problem">
+  <div class="container">
+    <span class="eyebrow reveal" style="justify-content:center">왜 필요한가</span>
+    <h2 class="reveal reveal-d1">고객은 이제 AI한테 물어봅니다</h2>
+    <div class="query-chips reveal reveal-d1">
+      <span class="query-chip"><span class="q">“</span>강남 세무사 추천해줘<span class="q">”</span></span>
+      <span class="query-chip"><span class="q">“</span>턱관절 잘 보는 한의원<span class="q">”</span></span>
+      <span class="query-chip"><span class="q">“</span>이혼 전문 변호사<span class="q">”</span></span>
+    </div>
+    <p class="note reveal reveal-d2">이런 질문에 <b>내 이름이 나오는지</b>, 무료 도구로 직접 확인해보세요.</p>
+    <div class="reveal reveal-d2">
+      <a href="#cta" class="btn btn-primary btn-lg">AIPICK 리포트 받기
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== CREDIBILITY BAND ===================== -->
+<section class="cred-band">
+  <div class="container cred-inner">
+    <div class="cred-item">
+      <span class="num">250<span style="font-size:18px">개</span></span>
+      <span class="lab">브랜드를 직접 코칭한<br>현장 경험</span>
+    </div>
+    <span class="cred-sep"></span>
+    <div class="cred-item">
+      <span class="num">1,000<span style="font-size:18px">개</span></span>
+      <span class="lab">수강 리뷰<br>5점 만점</span>
+    </div>
+    <span class="cred-sep"></span>
+    <div class="cred-item">
+      <span class="num">3<span style="font-size:18px">개</span></span>
+      <span class="lab">ChatGPT · Gemini · Claude<br>동시 진단</span>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 지금 일어나고 있는 일 ===================== -->
+<section class="sec">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow" style="justify-content:center">지금 일어나고 있는 일</span>
+      <h2>고객이 AI한테 물어보는데<br>거기에 <span class="text-blue">내 이름이 없습니다</span></h2>
+      <p>SEO가 구글·네이버의 게임이었다면, 지금은 ChatGPT·Gemini·Claude가 추천하는 시대입니다.</p>
+    </div>
+
+    <div class="now-grid">
+      <div class="now-mock reveal">
+        <div class="chat-card chat-card--bare">
+          <div class="chat-top">
+            <div class="chat-ai-badge">AI</div>
+            <div><div class="name">ChatGPT</div><div class="status">방금 전</div></div>
+          </div>
+          <div class="chat-q">서울 이혼 전문 변호사 추천해줘</div>
+          <div class="chat-a">
+            <div class="lead">서울 지역 이혼 전문으로는 이런 곳들이 있어요.</div>
+            <ol>
+              <li><span class="rank">1</span> A 법률사무소</li>
+              <li><span class="rank">2</span> B 로펌</li>
+              <li><span class="rank">3</span> C 법률사무소</li>
+            </ol>
+            <div class="chat-callout">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><line x1="12" y1="8" x2="12" y2="13"/><circle cx="12" cy="16.5" r=".6" fill="currentColor"/></svg>
+              변호사님 사무소는 목록에 없습니다
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="stats-4">
+        <div class="stat-card reveal"><div class="big">62%</div><div class="desc">소비자가 추천을 받을 때 AI에게 직접 물어봅니다</div></div>
+        <div class="stat-card reveal reveal-d1"><div class="big warn">73%</div><div class="desc">AI에 안 나오면 그대로 잃는 잠재고객</div></div>
+        <div class="stat-card reveal reveal-d1"><div class="big warn">0개</div><div class="desc">대부분 전문직 사이트의 AI 추천 등록 수</div></div>
+        <div class="stat-card reveal reveal-d2"><div class="big">250+</div><div class="desc">코탤이 직접 코칭하며 검증한 브랜드</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 업종별 현실 ===================== -->
+<section class="sec bg-silver">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow" style="justify-content:center">업종별 현실</span>
+      <h2>어떤 업종이든 AI 추천에서<br>빠지면 손해입니다</h2>
+      <p>고객이 AI에게 “잘하는 곳”을 묻는 순간, 거기에 없으면 기회 자체가 사라집니다.</p>
+    </div>
+
+    <div class="ind-grid">
+      <!-- 변호사 -->
+      <div class="ind-card reveal">
+        <div class="ind-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18M5 7l-3 6a3.5 3.5 0 0 0 6 0L5 7zM19 7l-3 6a3.5 3.5 0 0 0 6 0l-3-6zM5 7h14M7 21h10"/></svg></div>
+        <h3>변호사 · 법률사무소</h3>
+        <p>AI가 추천하는 변호사 목록에 없으면 상담 문의가 줄어듭니다.</p>
+        <ul class="ind-q">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>이혼 전문 변호사 추천해줘</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>부동산 분쟁 변호사 서울</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>형사 전문 로펌 비교</li>
+        </ul>
+      </div>
+      <!-- 세무사 -->
+      <div class="ind-card reveal reveal-d1">
+        <div class="ind-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 7h8M8 11h8M8 15h5"/></svg></div>
+        <h3>세무사 · 회계사무소</h3>
+        <p>법인세·종소세 시즌마다 “세무사 추천”을 AI에 묻는 사람이 급증합니다.</p>
+        <ul class="ind-q">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>스타트업 세무사 추천</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>법인세 절세 잘하는 세무사</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>프리랜서 종합소득세 상담</li>
+        </ul>
+      </div>
+      <!-- 의사 -->
+      <div class="ind-card reveal reveal-d2">
+        <div class="ind-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14" /><circle cx="12" cy="12" r="9"/></svg></div>
+        <h3>의사 · 병원 · 의원</h3>
+        <p>환자들이 네이버 블로그 대신 AI에게 직접 물어보기 시작했습니다.</p>
+        <ul class="ind-q">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>강남 피부과 여드름 추천</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>라식 잘하는 안과 서울</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>소아과 야간진료 근처</li>
+        </ul>
+      </div>
+      <!-- 치과 -->
+      <div class="ind-card reveal">
+        <div class="ind-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5.5C9.5 3.5 5 4 5 8.5c0 3 1 5 1.7 8.2.4 1.7 1.8 2.6 2.4.6.4-1.3.6-3.3 2.9-3.3s2.5 2 2.9 3.3c.6 2 2 1.1 2.4-.6C18 13.5 19 11.5 19 8.5c0-4.5-4.5-5-7-3z"/></svg></div>
+        <h3>치과 · 치과의원</h3>
+        <p>고가 시술일수록 환자가 AI에 먼저 묻고 옵니다. AI 추천 = 신환 유입 채널.</p>
+        <ul class="ind-q">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>임플란트 잘하는 치과</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>투명교정 치과 추천</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>사랑니 발치 후기 좋은 치과</li>
+        </ul>
+      </div>
+      <!-- 한의사 -->
+      <div class="ind-card reveal reveal-d1">
+        <div class="ind-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-6-4.5-6-10a6 6 0 0 1 12 0c0 5.5-6 10-6 10z"/><circle cx="12" cy="11" r="2.5"/></svg></div>
+        <h3>한의사 · 한의원</h3>
+        <p>한의원 특성상 “잘하는 곳”을 찾는 AI 질문이 특히 많습니다.</p>
+        <ul class="ind-q">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>턱관절 한의원 추천</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>다이어트 한약 효과 있는 곳</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>교통사고 한의원 치료</li>
+        </ul>
+      </div>
+      <!-- 자영업 -->
+      <div class="ind-card reveal reveal-d2">
+        <div class="ind-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l1.5-5h15L21 9M4 9h16v10a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V9zM3 9h18"/></svg></div>
+        <h3>자영업 · 중소기업</h3>
+        <p>동네 상권에서도 AI 추천이 매출에 직결되기 시작했습니다.</p>
+        <ul class="ind-q">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>홍대 분위기 좋은 카페</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>수학 학원 초등학생 추천</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>인테리어 업체 추천 서울</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== AIPICK 솔루션 ===================== -->
+<section class="sec" id="solution">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow" style="justify-content:center">AIPICK 솔루션</span>
+      <h2>AI가 추천하는 전문가로<br><span class="text-blue">만들어드립니다</span></h2>
+      <p>250개 브랜드 코칭 경험에서 검증된 3단계입니다.</p>
+    </div>
+
+    <div class="sol-list">
+      <div class="sol-step reveal">
+        <div class="sol-num">01</div>
+        <div class="sol-body">
+          <h3>AI가 읽을 수 있게 문을 연다</h3>
+          <p>대부분의 전문직 사이트는 AI 크롤러를 차단하고 있습니다. robots.txt, 구조화 데이터, 메타태그를 고쳐 ChatGPT·Gemini·Claude가 사이트를 읽을 수 있게 만듭니다.</p>
+        </div>
+        <div class="sol-result">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+          변호사 사이트 크롤러 차단 해제 → 2주 만에 인식 시작
+        </div>
+      </div>
+
+      <div class="sol-step reveal reveal-d1">
+        <div class="sol-num">02</div>
+        <div class="sol-body">
+          <h3>AI가 인용하고 싶은 답변을 만든다</h3>
+          <p>AI는 아무 글이나 인용하지 않습니다. 134~167단어의 최적 블록, 구체적 숫자, 자기완결형 문단 — AI가 “이거 좋은 답변이네” 싶은 구조로 콘텐츠를 바꿉니다.</p>
+        </div>
+        <div class="sol-result">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+          세무사 블로그 구조 변경 → 인용 가능성 32 → 71점
+        </div>
+      </div>
+
+      <div class="sol-step reveal reveal-d2">
+        <div class="sol-num">03</div>
+        <div class="sol-body">
+          <h3>AI가 반복 학습하게 노출시킨다</h3>
+          <p>일회성이 아닙니다. 신뢰할 수 있는 미디어 채널과 다국어 콘텐츠로 AI가 지속적으로 학습하게 만듭니다.</p>
+        </div>
+        <div class="sol-result">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+          치과 콘텐츠 3개월 최적화 → AI 추천 빈도 4배 증가
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== PROCESS (3단계) ===================== -->
+<section class="sec bg-tint">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow" style="justify-content:center">진행 과정</span>
+      <h2>3단계면 AI가<br><span class="text-blue">내 이름을 말합니다</span></h2>
+      <p>URL을 넣는 순간부터 추천 목록에 오르기까지, 코탤이 함께합니다.</p>
+    </div>
+
+    <div class="proc-grid">
+      <div class="proc-card reveal">
+        <span class="proc-step-num">01</span>
+        <span class="proc-badge">무료 진단 · 10초</span>
+        <h3>URL만 넣으세요</h3>
+        <p>ChatGPT·Gemini·Claude 3개 AI가 내 브랜드를 아는지 즉시 확인합니다.</p>
+        <span class="proc-tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>회원가입 없이 무료</span>
+      </div>
+      <div class="proc-card reveal reveal-d1">
+        <span class="proc-step-num">02</span>
+        <span class="proc-badge">원인 분석 · 정확히</span>
+        <h3>왜 안 나오는지 진단</h3>
+        <p>AI 크롤러 차단 여부, 콘텐츠 인용 가능성, 구조화 데이터 상태까지 정밀 분석합니다.</p>
+        <span class="proc-tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>전문직 사이트 평균 32점</span>
+      </div>
+      <div class="proc-card reveal reveal-d2">
+        <span class="proc-step-num">03</span>
+        <span class="proc-badge">AIPICK 최적화 · 결과로</span>
+        <h3>추천 목록에 올립니다</h3>
+        <p>진단 결과를 기반으로 콘텐츠 구조를 바꿉니다. 2~4주면 AI 인식이 시작되고, 1~3개월이면 추천 목록에 오릅니다.</p>
+        <span class="proc-tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>평균 AIPICK Score 2.4배 상승</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== WHY COTAL x AIPICK ===================== -->
+<section class="sec">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow" style="justify-content:center">왜 코탤 × AIPICK인가</span>
+      <h2>250개 브랜드를 직접 코칭한<br><span class="text-blue">현장이 만들었습니다</span></h2>
+    </div>
+
+    <div class="why-grid">
+      <div class="why-card reveal">
+        <span class="badge">COTAL · CORE TALENT</span>
+        <h3>SEO가 검색의 게임이었다면,<span class="big">GEO는 AI의 게임</span></h3>
+        <div class="sig">
+          <div class="av">AI</div>
+          <div class="who"><b>코탤 AIPICK 팀</b><span>AI 마케팅 · GEO/AEO 전문</span></div>
+        </div>
+      </div>
+      <div class="why-body reveal reveal-d1">
+        <p>코탤(COTAL)은 <strong>250개 이상의 브랜드</strong>를 직접 코칭하며 마케팅 전략을 설계해왔습니다. 그 현장 데이터를 그대로 AI 검색 최적화에 옮긴 솔루션이 바로 AIPICK입니다.</p>
+        <p>SEO가 구글·네이버의 게임이었다면, <strong>GEO(Generative Engine Optimization)</strong>는 ChatGPT·Gemini·Claude의 게임입니다. 아무리 열심히 해도 상황이 바뀌지 않는다면, <strong>방법을 바꿔야 할 때</strong>입니다.</p>
+        <div class="why-stats">
+          <div class="why-stat"><div class="n">250+</div><div class="l">직접 코칭한 브랜드</div></div>
+          <div class="why-stat"><div class="n">1,000+</div><div class="l">수강 리뷰 (5점)</div></div>
+          <div class="why-stat"><div class="n">4년</div><div class="l">AI 마케팅 경력</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 오토AI 블로그 ===================== -->
+<section class="sec auto" id="auto-ai">
+  <div class="container">
+    <div class="auto-head reveal">
+      <span class="auto-badge">오토AI 블로그 <span class="soon">COMING SOON</span></span>
+      <h2>블로그만 쓰면<br>AI가 내 사업을 추천합니다</h2>
+      <p>네이버 블로그 글을 AEO/GEO 최적화 웹사이트 콘텐츠로 자동 변환합니다. 웹사이트 제작, 구조화 데이터, AI 검색 최적화 — 전부 코탤 AIPICK이 알아서 합니다.</p>
+    </div>
+
+    <div class="auto-pains">
+      <div class="auto-pain reveal"><div class="x">✕</div><p>블로그는 열심히 쓰는데, AI 검색엔 안 나온다</p></div>
+      <div class="auto-pain reveal reveal-d1"><div class="x">✕</div><p>웹사이트를 따로 만들 시간도 돈도 없다</p></div>
+      <div class="auto-pain reveal reveal-d2"><div class="x">✕</div><p>AEO·GEO가 중요한 건 아는데, 어떻게 할지 모른다</p></div>
+    </div>
+
+    <div class="auto-steps">
+      <div class="auto-step reveal">
+        <div class="circ">1</div>
+        <h4>블로그에 글 쓰기</h4>
+        <p>평소처럼 네이버 블로그에 글을 올리세요. 그게 끝입니다.</p>
+      </div>
+      <div class="auto-step reveal reveal-d1">
+        <div class="circ">2</div>
+        <h4>AI가 자동 변환</h4>
+        <p>AEO/GEO에 최적화된 구조로 콘텐츠를 완전히 재작성합니다.</p>
+      </div>
+      <div class="auto-step reveal reveal-d2">
+        <div class="circ">3</div>
+        <h4>AI 검색에 노출</h4>
+        <p>ChatGPT·Gemini·Claude가 내 비즈니스를 추천하기 시작합니다.</p>
+      </div>
+    </div>
+
+    <div class="auto-cta reveal">
+      <div class="save">사전 예약 시 정식 출시가 <b>30% 할인</b></div>
+      <div>
+        <a href="#cta" class="btn btn-light btn-lg">사전 예약 신청하기
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 소식 / 블로그 ===================== -->
+<section class="sec bg-silver" id="blog">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow" style="justify-content:center">소식</span>
+      <h2>공지와 블로그</h2>
+      <p>AI 검색 시대에 살아남는 전략, 코탤이 먼저 정리해 드립니다.</p>
+    </div>
+
+    <div class="blog-grid">
+      <article class="blog-feature reveal">
+        <div class="blog-thumb">
+          <span class="cat">AEO 가이드</span>
+          <span class="glyph">AIPICK</span>
+        </div>
+        <div class="body">
+          <h3>ChatGPT가 우리 브랜드를 추천하지 않는 진짜 이유</h3>
+          <p>ChatGPT와 Perplexity가 우리 브랜드를 추천하지 않는 3가지 핵심 이유와 AEO/GEO 최적화 전략을 공개합니다. robots.txt 설정부터 구조화 데이터 적용까지 지금 확인하세요.</p>
+          <div class="blog-meta"><span>2026년 5월 6일</span><a href="#cta" class="more">자세히 보기 →</a></div>
+        </div>
+      </article>
+
+      <article class="blog-mini reveal reveal-d1">
+        <span class="cat">GEO 전략</span>
+        <h3>AI가 인용하는 글에는 공통점이 있습니다</h3>
+        <p>134~167단어 블록, 구체적 숫자, 자기완결형 문단 — AI가 좋아하는 콘텐츠 구조의 법칙.</p>
+        <div class="date">2026년 5월 2일</div>
+      </article>
+
+      <article class="blog-mini reveal reveal-d2">
+        <span class="cat">업종 사례</span>
+        <h3>치과가 3개월 만에 AI 추천 4배가 된 방법</h3>
+        <p>실제 AIPICK 최적화 전후, AI 추천 빈도가 어떻게 달라졌는지 데이터로 살펴봅니다.</p>
+        <div class="date">2026년 4월 28일</div>
+      </article>
+    </div>
+
+    <div style="text-align:center;margin-top:40px" class="reveal">
+      <a href="#cta" class="btn btn-ghost btn-lg">블로그 모두 보기 →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FAQ ===================== -->
+<section class="sec" id="faq">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow" style="justify-content:center">FAQ</span>
+      <h2>자주 묻는 질문</h2>
+    </div>
+
+    <div class="faq-wrap">
+      <div class="faq-quote reveal">
+        <div class="av">코탤</div>
+        <p>“가장 많이 받는 질문들을 모았습니다. 여기 없는 궁금한 점은 <b>무료 상담</b>에서 편하게 물어보세요.”</p>
+      </div>
+
+      <div class="faq-list reveal reveal-d1">
+        <div class="faq-item">
+          <button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-a1">
+            SEO 이미 하고 있는데, 이거랑 뭐가 다른가요?
+            <span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+          </button>
+          <div class="faq-a" id="faq-a1" role="region"><div class="faq-a-inner"><div>SEO는 구글·네이버에서 상위 노출시키는 것이고, AIPICK은 ChatGPT·Gemini·Claude 같은 AI가 직접 추천하도록 만드는 것입니다. 완전히 다른 게임입니다. “강남 치과 추천해줘”라고 AI에게 물었을 때 내 이름이 나오느냐 마느냐의 문제예요.</div></div></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-a2">
+            우리 같은 동네 병원(사무소)도 효과 있나요?
+            <span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+          </button>
+          <div class="faq-a" id="faq-a2" role="region"><div class="faq-a-inner"><div>오히려 동네 단위 검색에서 더 효과적입니다. “근처”, “지역명 + 업종”으로 묻는 질문이 늘어나면서, 지역 기반 전문가일수록 AI 추천의 영향이 매출에 직결됩니다. 경쟁자가 아직 시작하지 않은 지금이 기회입니다.</div></div></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-a3">
+            AIPICK Score가 뭔가요?
+            <span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+          </button>
+          <div class="faq-a" id="faq-a3" role="region"><div class="faq-a-inner"><div>AI가 내 사이트를 얼마나 잘 읽고, 인용하고, 추천할 수 있는지를 점수로 환산한 지표입니다. 크롤러 접근성, 콘텐츠 인용 가능성, 구조화 데이터 상태 등을 종합해 산출하며, 전문직 사이트 평균은 약 32점입니다. AIPICK 최적화 후 평균 2.4배 상승합니다.</div></div></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-a4">
+            효과가 얼마나 빨리 나오나요?
+            <span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+          </button>
+          <div class="faq-a" id="faq-a4" role="region"><div class="faq-a-inner"><div>크롤러 차단 해제 후 보통 2~4주면 AI가 사이트를 인식하기 시작하고, 콘텐츠 최적화가 누적되는 1~3개월이면 추천 목록에 오르기 시작합니다. 업종과 경쟁 강도에 따라 차이는 있지만, 방치할수록 격차는 더 벌어집니다.</div></div></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-a5">
+            무료 진단은 어디까지 해주나요?
+            <span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+          </button>
+          <div class="faq-a" id="faq-a5" role="region"><div class="faq-a-inner"><div>URL만 넣으면 회원가입 없이 ChatGPT·Gemini·Claude 3개 AI에서 내 브랜드 인식 여부, AI 크롤러 차단 상태, 콘텐츠 인용 가능성, 현재 AIPICK Score까지 확인할 수 있습니다. 진단 결과를 바탕으로 무엇부터 고쳐야 하는지 우선순위도 안내해 드립니다.</div></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FINAL CTA ===================== -->
+<section class="final" id="cta">
+  <div class="container">
+    <span class="eyebrow">지금 확인하세요</span>
+    <h2>환자가, 의뢰인이, 고객이<br>AI한테 물어보고 있습니다</h2>
+    <p>“이혼 전문 변호사 추천해줘” “임플란트 잘하는 치과” —<br>거기에 내 이름이 나오는지, 10초면 알 수 있습니다.</p>
+    <div class="emph">경쟁자보다 먼저 시작하는 게 유일한 전략입니다.</div>
+    <form class="report-form" id="reportForm">
+      <input type="url" id="reportUrl" name="url" placeholder="내 사이트 URL을 입력하세요 (예: cotal.kr)" aria-label="진단할 사이트 URL" required />
+      <button type="submit" class="btn btn-light btn-lg">무료 AIPICK 진단 실행</button>
+    </form>
+    <p class="report-hint">URL을 입력하면 AI 크롤러 차단 여부·구조화 데이터·콘텐츠 인용 가능성을 즉시 분석해 AIPICK Score를 보여드립니다. 회원가입 없이 무료.</p>
+    <div id="diagResult" class="diag-result" hidden aria-live="polite"></div>
+    <div class="final-actions">
+      <a href="mailto:help@cotal.kr?subject=AIPICK 대행 신청" class="btn btn-outline-light btn-lg">대행 신청하기
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+      <a href="mailto:help@cotal.kr?subject=AIPICK 문의" class="btn btn-outline-light btn-lg">문의하기</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <img src="assets/cotal-logo-white.png" alt="COTAL 코탤" />
+        <div class="svc">코탤 × AIPICK</div>
+        <p>AI가 추천하는 전문가로 만들어드립니다. ChatGPT·Gemini·Claude 시대의 마케팅, 코탤이 함께합니다.</p>
+      </div>
+      <div class="footer-col">
+        <h4>서비스</h4>
+        <a href="#problem">왜 필요한가</a>
+        <a href="#solution">AIPICK 솔루션</a>
+        <a href="#auto-ai">오토AI 블로그</a>
+        <a href="#cta">AIPICK 리포트</a>
+      </div>
+      <div class="footer-col">
+        <h4>회사</h4>
+        <a href="#blog">블로그 · 소식</a>
+        <a href="#faq">자주 묻는 질문</a>
+        <a href="mailto:help@cotal.kr">help@cotal.kr</a>
+        <a href="#cta">대행 신청</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="legal">
+        <!-- TODO: 아래 [ ] 항목을 코탤의 실제 사업자 정보로 교체하세요 -->
+        <b>코탤(COTAL)</b> · 대표: [대표자명] · 사업자등록번호: [000-00-00000] · 통신판매업 신고번호: [0000-서울-0000]<br>
+        주소: [사업장 주소] · 문의: help@cotal.kr<br>
+        <span class="footer-disc">※ 본 페이지의 사례·수치는 개별 사례 기준이며, 결과는 업종·경쟁 상황에 따라 달라질 수 있습니다. 의료·법률 등 광고 규제 업종은 관련 법령(의료법·변호사법 등)에 따른 광고 심의·준수가 필요합니다.</span><br>
+        © 2026 COTAL. All rights reserved.
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  "use strict";
+  var $  = function(s,c){ return (c||document).querySelector(s); };
+  var $$ = function(s,c){ return Array.prototype.slice.call((c||document).querySelectorAll(s)); };
+
+  /* Hide decorative SVGs from assistive tech */
+  $$('svg:not([aria-hidden])').forEach(function(svg){
+    svg.setAttribute('aria-hidden','true');
+    svg.setAttribute('focusable','false');
+  });
+
+  /* Scroll reveal — run first so content is shown even if later code throws */
+  try {
+    var reduce  = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var reveals = $$('.reveal');
+    if(reduce || !('IntersectionObserver' in window)){
+      reveals.forEach(function(el){ el.classList.add('visible'); });
+    } else {
+      var io = new IntersectionObserver(function(entries){
+        entries.forEach(function(e){
+          if(e.isIntersecting){ e.target.classList.add('visible'); io.unobserve(e.target); }
+        });
+      }, {threshold:0.12, rootMargin:'0px 0px -40px 0px'});
+      reveals.forEach(function(el){ io.observe(el); });
+    }
+  } catch(err){
+    $$('.reveal').forEach(function(el){ el.classList.add('visible'); });
+  }
+
+  /* Sticky header shadow */
+  var header = $('#header');
+  if(header){
+    var onScroll = function(){ header.classList.toggle('scrolled', window.scrollY > 8); };
+    window.addEventListener('scroll', onScroll, {passive:true});
+    onScroll();
+  }
+
+  /* Mobile menu */
+  var toggle = $('#menuToggle'), menu = $('#mobileMenu');
+  if(toggle && menu){
+    var setMenu = function(open){
+      menu.classList.toggle('open', open);
+      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      toggle.setAttribute('aria-label', open ? '메뉴 닫기' : '메뉴 열기');
+    };
+    toggle.addEventListener('click', function(e){
+      e.stopPropagation();
+      setMenu(!menu.classList.contains('open'));
+    });
+    $$('a', menu).forEach(function(a){ a.addEventListener('click', function(){ setMenu(false); }); });
+    document.addEventListener('keydown', function(e){ if(e.key === 'Escape'){ setMenu(false); } });
+    document.addEventListener('click', function(e){
+      if(menu.classList.contains('open') && !menu.contains(e.target) && !toggle.contains(e.target)){ setMenu(false); }
+    });
+  }
+
+  /* FAQ accordion — CSS grid-template-rows handles the animation (resize-safe) */
+  $$('.faq-item').forEach(function(item){
+    var q = $('.faq-q', item);
+    if(!q) return;
+    q.addEventListener('click', function(){
+      var willOpen = !item.classList.contains('open');
+      $$('.faq-item.open').forEach(function(other){
+        if(other !== item){
+          other.classList.remove('open');
+          var oq = $('.faq-q', other); if(oq){ oq.setAttribute('aria-expanded','false'); }
+        }
+      });
+      item.classList.toggle('open', willOpen);
+      q.setAttribute('aria-expanded', willOpen ? 'true' : 'false');
+    });
+  });
+
+  /* Free-report form → live AIPICK diagnosis via /api/diagnose */
+  var rf = $('#reportForm'), box = $('#diagResult');
+
+  function esc(s){
+    return String(s).replace(/[&<>"]/g, function(c){
+      return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];
+    });
+  }
+  function diagColor(s){ return s>=80?'#1aa260':s>=60?'#3955c7':s>=40?'#e0962a':'#dc4a4a'; }
+
+  function renderDiag(data){
+    var r = data.result, c = r.categories, cr = data.crawlers;
+    var col = diagColor(r.aipick_score);
+    var cats = [
+      ['AI 크롤러 접근성', c.ai_crawler_access],
+      ['구조화 데이터', c.structured_data],
+      ['크롤링 기본기', c.crawlability],
+      ['콘텐츠 인용 가능성', c.citability]
+    ];
+    var catHtml = cats.map(function(x){
+      var pct = Math.round(x[1].score / x[1].max * 100);
+      return '<div class="diag-cat"><span class="lab">'+x[0]+'</span>'
+        + '<span class="bar"><i style="width:'+pct+'%"></i></span>'
+        + '<span class="val">'+x[1].score+'/'+x[1].max+'</span></div>';
+    }).join('');
+    var bots = cr.bots, names = Object.keys(bots);
+    var allowed = names.filter(function(n){ return bots[n].allowed; }).length;
+    var key = ['GPTBot','OAI-SearchBot','ClaudeBot','Google-Extended','PerplexityBot'];
+    var chips = key.map(function(n){
+      if(!bots[n]) return '';
+      var ok = bots[n].allowed;
+      return '<span class="diag-chip '+(ok?'ok':'no')+'">'+(ok?'✓ ':'✗ ')+n+'</span>';
+    }).join('');
+    var recs = (r.recommendations||[]).slice(0,4).map(function(m){ return '<li>'+esc(m)+'</li>'; }).join('');
+    var mailto = 'mailto:help@cotal.kr?subject='
+      + encodeURIComponent('AIPICK 진단 상담 (' + r.aipick_score + '점)')
+      + '&body=' + encodeURIComponent('진단 URL: ' + data.url + '\nAIPICK Score: ' + r.aipick_score + '/100 (' + r.grade + ')');
+    return '<div class="diag-head"><strong>AIPICK 진단 결과</strong><span class="u">'+esc(data.url)+'</span></div>'
+      + '<div class="diag-score"><span class="n" style="color:'+col+'">'+r.aipick_score+'<small>/100</small></span>'
+      + '<div class="meta"><div class="g">'+esc(r.grade)+'</div>'
+      + '<div class="diag-track"><i style="width:'+r.aipick_score+'%;background:'+col+'"></i></div></div></div>'
+      + '<div class="diag-cats">'+catHtml+'</div>'
+      + '<div class="diag-bots"><div class="sum">AI 크롤러 '+allowed+'/'+names.length+' 허용</div>'
+      + '<div class="diag-chips">'+chips+'</div></div>'
+      + (recs ? '<div class="diag-recs"><h4>우선순위 개선 권고</h4><ul>'+recs+'</ul></div>' : '')
+      + '<div class="diag-cta"><a class="btn btn-primary" href="'+mailto+'">이 결과로 무료 상담</a>'
+      + '<a class="btn btn-ghost" href="#solution">최적화 방법 보기</a></div>';
+  }
+
+  if(rf && box){
+    rf.addEventListener('submit', function(e){
+      e.preventDefault();
+      var input = $('#reportUrl');
+      var url = input ? input.value.trim() : '';
+      if(!url) return;
+      box.hidden = false;
+      box.innerHTML = '<div class="diag-loading"><span class="diag-spin"></span>사이트를 분석하고 있습니다… 최대 20초</div>';
+      box.scrollIntoView({behavior:'smooth', block:'center'});
+      fetch('/api/diagnose?url=' + encodeURIComponent(url))
+        .then(function(res){
+          return res.json().then(function(j){
+            if(!res.ok || j.error){ throw new Error(j.error || ('서버 오류 ' + res.status)); }
+            return j;
+          });
+        })
+        .then(function(data){ box.innerHTML = renderDiag(data); })
+        .catch(function(err){
+          var fb = 'mailto:help@cotal.kr?subject=' + encodeURIComponent('AIPICK 진단 요청')
+            + '&body=' + encodeURIComponent('진단 URL: ' + url);
+          box.innerHTML = '<div class="diag-loading">진단 서버에 연결할 수 없습니다 ('
+            + esc(err.message) + '). <a href="'+fb+'">메일로 요청하기 →</a></div>';
+        });
+    });
+  }
+})();
+</script>
+</body>
+</html>

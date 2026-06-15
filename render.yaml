@@ -1,0 +1,18 @@
+# Render Blueprint
+# render.com → New → Blueprint → 이 저장소(GitHub) 연결 시 자동 인식됩니다.
+# (대시보드에서 수동으로 Web Service를 만들어도 됩니다 — README 참고)
+services:
+  - type: web
+    name: aipick
+    runtime: docker
+    plan: free               # 무료 티어로 시작 (콜드 스타트 있음). 운영 시 starter 이상 권장.
+    healthCheckPath: /healthz
+    autoDeploy: true         # main 브랜치 푸시 시 자동 재배포
+    # region: singapore      # 한국 사용자 지연을 줄이려면 유료 플랜에서 활성화
+    envVars:
+      - key: AIPICK_MAX_CONCURRENT
+        value: "4"
+      - key: AIPICK_CACHE_TTL
+        value: "600"
+      - key: ANTHROPIC_API_KEY   # 2층 LLM 모듈용. 지금은 비워둬도 됩니다(나중에 대시보드에서 입력).
+        sync: false

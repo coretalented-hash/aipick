@@ -1,0 +1,27 @@
+# AIPICK은 AI 검색 최적화 서비스입니다 — 스스로의 사이트도 AI 크롤러에 개방합니다.
+User-agent: *
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+# 도메인 연결 후 아래 줄의 절대 URL을 채워 sitemap을 선언하세요:
+# Sitemap: https://your-domain/sitemap.xml

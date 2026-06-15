@@ -1,0 +1,13 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# 환경변수/시크릿 (절대 커밋 금지)
+.env
+.env.*
+
+# 에디터/OS
+.DS_Store
+Thumbs.db
+.claude/
