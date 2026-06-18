@@ -24,7 +24,7 @@
   "slogan": "CORE TALENT",
   "description": "AI가 추천하는 전문가로 만들어드립니다. ChatGPT·Gemini·Claude 시대의 AI 검색 최적화(GEO/AEO) 솔루션 AIPICK을 제공합니다.",
   "logo": "assets/cotal-logo-blue.png",
-  "email": "help@cotal.kr",
+  "email": "ceo@co-tal.com",
   "makesOffer": {
     "@type": "Offer",
     "itemOffered": {
@@ -1059,7 +1059,7 @@ section[id],#top{scroll-margin-top:84px}
           <li style="display:flex;gap:9px"><span style="color:var(--blue);font-weight:800;flex:none">✓</span>월간 AIPICK Score 리포트</li>
           <li style="display:flex;gap:9px"><span style="color:var(--blue);font-weight:800;flex:none">✓</span>우선 상담·운영 가이드</li>
         </ul>
-        <a href="mailto:help@cotal.kr?subject=AIPICK 월 운영 문의" class="btn btn-ghost" style="margin-top:auto;width:100%">상담 문의</a>
+        <a href="mailto:ceo@co-tal.com?subject=AIPICK 월 운영 문의" class="btn btn-ghost" style="margin-top:auto;width:100%">상담 문의</a>
       </div>
 
     </div>
@@ -1186,10 +1186,10 @@ section[id],#top{scroll-margin-top:84px}
     <p class="report-hint">URL을 입력하면 AI 크롤러 차단 여부·구조화 데이터·콘텐츠 인용 가능성을 즉시 분석해 AIPICK Score를 보여드립니다. 회원가입 없이 무료.</p>
     <div id="diagResult" class="diag-result" hidden aria-live="polite"></div>
     <div class="final-actions">
-      <a href="mailto:help@cotal.kr?subject=AIPICK 대행 신청" class="btn btn-outline-light btn-lg">대행 신청하기
+      <a href="mailto:ceo@co-tal.com?subject=AIPICK 대행 신청" class="btn btn-outline-light btn-lg">대행 신청하기
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
       </a>
-      <a href="mailto:help@cotal.kr?subject=AIPICK 문의" class="btn btn-outline-light btn-lg">문의하기</a>
+      <a href="http://pf.kakao.com/_GAxlAn/chat" target="_blank" rel="noopener" class="btn btn-outline-light btn-lg">카카오로 문의하기</a>
     </div>
   </div>
 </section>
@@ -1214,15 +1214,15 @@ section[id],#top{scroll-margin-top:84px}
         <h4>회사</h4>
         <a href="#blog">블로그 · 소식</a>
         <a href="#faq">자주 묻는 질문</a>
-        <a href="mailto:help@cotal.kr">help@cotal.kr</a>
+        <a href="http://pf.kakao.com/_GAxlAn/chat" target="_blank" rel="noopener">카카오톡 문의</a>
+        <a href="mailto:ceo@co-tal.com">ceo@co-tal.com</a>
         <a href="#cta">대행 신청</a>
       </div>
     </div>
     <div class="footer-bottom">
       <div class="legal">
-        <!-- TODO: 아래 [ ] 항목을 코탤의 실제 사업자 정보로 교체하세요 -->
-        <b>코탤(COTAL)</b> · 대표: [대표자명] · 사업자등록번호: [000-00-00000] · 통신판매업 신고번호: [0000-서울-0000]<br>
-        주소: [사업장 주소] · 문의: help@cotal.kr<br>
+        <b>코탤</b> · 대표: 양혜준 · 사업자등록번호: 396-81-03154 · 통신판매업 신고번호: 2024-용인수지-0369<br>
+        주소: 경기도 용인시 수지구 풍덕천로139번길 10-4 1동 601호 · 문의: ceo@co-tal.com<br>
         <span class="footer-disc">※ 본 페이지의 사례·수치는 개별 사례 기준이며, 결과는 업종·경쟁 상황에 따라 달라질 수 있습니다. 의료·법률 등 광고 규제 업종은 관련 법령(의료법·변호사법 등)에 따른 광고 심의·준수가 필요합니다.</span><br>
         © 2026 COTAL. All rights reserved.
       </div>
@@ -1338,7 +1338,7 @@ section[id],#top{scroll-margin-top:84px}
       return '<span class="diag-chip '+(ok?'ok':'no')+'">'+(ok?'✓ ':'✗ ')+n+'</span>';
     }).join('');
     var recs = (r.recommendations||[]).slice(0,4).map(function(m){ return '<li>'+esc(m)+'</li>'; }).join('');
-    var mailto = 'mailto:help@cotal.kr?subject='
+    var mailto = 'mailto:ceo@co-tal.com?subject='
       + encodeURIComponent('AIPICK 진단 상담 (' + r.aipick_score + '점)')
       + '&body=' + encodeURIComponent('진단 URL: ' + data.url + '\nAIPICK Score: ' + r.aipick_score + '/100 (' + r.grade + ')');
     return '<div class="diag-head"><strong>AIPICK 진단 결과</strong><span class="u">'+esc(data.url)+'</span></div>'
@@ -1371,7 +1371,7 @@ section[id],#top{scroll-margin-top:84px}
         })
         .then(function(data){ box.innerHTML = renderDiag(data); })
         .catch(function(err){
-          var fb = 'mailto:help@cotal.kr?subject=' + encodeURIComponent('AIPICK 진단 요청')
+          var fb = 'mailto:ceo@co-tal.com?subject=' + encodeURIComponent('AIPICK 진단 요청')
             + '&body=' + encodeURIComponent('진단 URL: ' + url);
           box.innerHTML = '<div class="diag-loading">진단 서버에 연결할 수 없습니다 ('
             + esc(err.message) + '). <a href="'+fb+'">메일로 요청하기 →</a></div>';
