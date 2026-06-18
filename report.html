@@ -130,7 +130,7 @@ img{display:block;max-width:100%}
     <label class="cb"><input type="checkbox" id="w3" checked /> 메타·Open Graph 정비</label>
     <label class="cb"><input type="checkbox" id="w4" checked /> sitemap.xml 생성·등록</label>
     <label class="cb"><input type="checkbox" id="w5" checked /> 핵심 글 5편 인용형 재구성</label>
-    <label class="cb"><input type="checkbox" id="w6" checked /> FAQ 블록·Q&amp;A 구조 추가</label>
+    <label class="cb"><input type="checkbox" id="w6" checked /> 업종 맞춤 키워드 설계</label>
   </div>
 
   <label>추가 메모 (선택)</label>
@@ -210,7 +210,7 @@ img{display:block;max-width:100%}
     ['citability','콘텐츠 인용 가능성']
   ];
   var KEYBOTS = ['GPTBot','OAI-SearchBot','ClaudeBot','Google-Extended','PerplexityBot'];
-  var WORK = [['w1','robots.txt — AI 크롤러 허용'],['w2','구조화 데이터(JSON-LD) 추가'],['w3','메타·Open Graph 정비'],['w4','sitemap.xml 생성·등록'],['w5','핵심 글 5편 인용형 재구성'],['w6','FAQ 블록·Q&A 구조 추가']];
+  var WORK = [['w1','robots.txt — AI 크롤러 허용'],['w2','구조화 데이터(JSON-LD) 추가'],['w3','메타·Open Graph 정비'],['w4','sitemap.xml 생성·등록'],['w5','핵심 글 5편 인용형 재구성'],['w6','업종 맞춤 키워드 설계']];
 
   function showErr(msg){ $('err').innerHTML = '<div class="err">'+esc(msg)+'</div>'; }
   function clearErr(){ $('err').innerHTML=''; }
@@ -221,11 +221,11 @@ img{display:block;max-width:100%}
       var bc=(b.result.categories||{})[c[0]]||{score:0,max:0};
       var ac=(a.result.categories||{})[c[0]]||{score:0,max:0};
       var bp=bc.max?Math.round(bc.score/bc.max*100):0;
-      var ap=ac.max?Math.round(ac.score/ac.max*100):0;
+      var ap=ac.max?Math.min(100,Math.round(ac.score/ac.max*100)):0;
       var d=Math.round((ac.score||0)-(bc.score||0));
       rows += '<tr><td>'+c[1]+'</td>'
         + '<td class="num">'+ (Math.round(bc.score)) +'/'+bc.max+'</td>'
-        + '<td><div class="barwrap"><span class="bar"><i style="width:'+ap+'%;background:'+color(a.result.aipick_score)+'"></i></span>'
+        + '<td><div class="barwrap"><span class="bar"><i style="width:'+ap+'%;background:'+color(ap)+'"></i></span>'
           + '<b style="white-space:nowrap">'+Math.round(ac.score)+'/'+ac.max+'</b></div></td>'
         + '<td class="num">'+(d>0?'<span class="up">+'+d+'</span>':d)+'</td></tr>';
     });
@@ -303,7 +303,7 @@ img{display:block;max-width:100%}
       + '<div class="rep-foot">'
         + '담당: '+contact+'<br>'
         + '<b>※</b> 본 리포트의 점수는 코탤 AIPICK 진단 엔진 기준이며, AI의 실제 인용·추천은 알고리즘 특성상 보장되지 않습니다. 결과는 업종·경쟁 상황에 따라 달라질 수 있습니다. 의료·법률 등 광고 규제 업종은 관련 법령(의료법·변호사법 등) 준수가 필요합니다.<br>'
-        + '© 2026 COTAL · AIPICK'
+        + '© 2026 Cotal Inc. · AIPICK'
       + '</div>';
 
     $('report').innerHTML = html;
