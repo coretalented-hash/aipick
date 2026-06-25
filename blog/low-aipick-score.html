@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>AIPICK 점수가 낮은 사이트의 3가지 공통점 — 진단 노트 · 코탤</title>
+<meta name="description" content="무료 진단에서 가장 자주 걸리는 항목 세 가지 — 크롤러 차단, 구조화 데이터 부재, 인용 불가능한 글 구조. 하나만 고쳐도 점수가 오릅니다." />
+<meta name="theme-color" content="#3955c7" />
+<link rel="icon" type="image/png" href="../assets/cotal-logo-blue.png" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="AIPICK 점수가 낮은 사이트의 3가지 공통점" />
+<meta property="og:description" content="무료 진단에서 가장 자주 걸리는 항목 세 가지." />
+<link rel="canonical" href="https://aipick.cotal.kr/blog/low-aipick-score.html" />
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+<link rel="stylesheet" href="blog.css" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","headline":"AIPICK 점수가 낮은 사이트의 3가지 공통점","description":"무료 진단에서 가장 자주 걸리는 항목 세 가지 — 크롤러 차단, 구조화 데이터 부재, 인용 불가능한 글 구조.","datePublished":"2026-06-20","inLanguage":"ko","author":{"@type":"Organization","name":"주식회사 코탤","alternateName":"COTAL"},"publisher":{"@type":"Organization","name":"주식회사 코탤","logo":{"@type":"ImageObject","url":"https://aipick.cotal.kr/assets/cotal-logo-blue.png"}},"mainEntityOfPage":"https://aipick.cotal.kr/blog/low-aipick-score.html"}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"크롤러를 열면 콘텐츠가 도용되지 않나요?","acceptedAnswer":{"@type":"Answer","text":"AI 인용은 출처 표기를 동반하는 노출에 가깝습니다. 막아두면 도용이 아니라 부재가 됩니다 — 우리 자리에 경쟁 병원만 인용됩니다."}},{"@type":"Question","name":"네이버 블로그만 쓰는데도 해당되나요?","acceptedAnswer":{"@type":"Answer","text":"블로그는 robots.txt를 직접 만지지 못하지만, 글 구조(자기완결·질문형)는 동일하게 적용됩니다. 이 경우 콘텐츠 재구성 중심으로 진행합니다."}},{"@type":"Question","name":"AIPICK 점수는 몇 점이면 되나요?","acceptedAnswer":{"@type":"Answer","text":"절대 기준보다 경쟁 병원 대비 위치가 중요합니다. 진단 후 우선순위대로 올리면 됩니다."}}]}
+</script>
+</head>
+<body>
+<header class="header">
+  <div class="nav">
+    <a href="../index.html" class="brand" aria-label="AIPICK 홈"><img src="../assets/cotal-logo-blue.png" alt="COTAL 코탤" /><span class="svc"><b>AIPICK</b></span></a>
+    <a href="../index.html" class="nav-back">← AIPICK 홈</a>
+  </div>
+</header>
+
+<main class="article">
+  <span class="cat">진단 노트</span>
+  <h1>AIPICK 점수가 낮은 사이트의 3가지 공통점</h1>
+  <div class="meta">진단 노트 · 2026. 6. 20.</div>
+  <p class="dek">무료 진단에서 가장 자주 걸리는 항목은 거의 정해져 있습니다. 세 가지 중 하나만 제대로 고쳐도 점수가 크게 오릅니다.</p>
+
+  <h2>1. AI 크롤러가 막혀 있다</h2>
+  <p>가장 흔하고 가장 치명적입니다. 많은 사이트가 robots.txt에서 GPTBot·ClaudeBot·Google-Extended 같은 AI 크롤러를 (대개 의도치 않게) 차단하고 있습니다. 크롤러가 막히면 AI는 사이트를 <b>읽을 수조차</b> 없습니다. 콘텐츠가 아무리 좋아도 시작점에서 탈락입니다.</p>
+  <p style="font-size:14.5px;color:var(--muted)">확인: 주소창에 <b>내사이트주소/robots.txt</b> 를 열어 ‘GPTBot’과 ‘Disallow’가 함께 있는지 보세요.</p>
+
+  <h2>2. 구조화 데이터가 없다</h2>
+  <p>JSON-LD(schema.org)가 없으면 AI는 이 사이트가 무슨 업종인지, 어디에 있는지, 무엇을 제공하는지 추측에 의존합니다. Organization·LocalBusiness·FAQPage 스키마를 넣으면 기계가 정확히 인식합니다. 진단에서 ‘구조화 데이터 0점’이 가장 자주 나오는 항목입니다.</p>
+
+  <h2>3. 인용할 수 없는 글 구조다</h2>
+  <p>길고 산만한 소개문은 AI가 인용하지 않습니다. 한 문단이 여러 주제를 오가면 떼어 쓸 수 없기 때문입니다. 질문 하나에 완결로 답하는 80~600자 문단과 질문형 소제목이 있어야 ‘출처’로 채택됩니다.</p>
+
+  <div class="callout">세 가지는 보통 함께 나타납니다. <b>크롤러를 열고 → 구조화 데이터를 넣고 → 핵심 글을 인용형으로 재구성</b>하는 순서로 잡으면 점수가 빠르게 회복됩니다.</div>
+
+  <h2>1분 자가 점검</h2>
+  <ol>
+    <li>robots.txt에 AI 크롤러 차단(Disallow)이 있는가</li>
+    <li>페이지 소스에 <code>&lt;script type="application/ld+json"&gt;</code> 가 있는가</li>
+    <li>&lt;title&gt;과 meta description이 채워져 있는가</li>
+    <li>핵심 글이 ‘질문 → 답’ 구조인가</li>
+  </ol>
+  <p>직접 확인이 번거롭다면 AIPICK 무료 진단이 10초 만에 항목별 점수로 정리해 줍니다.</p>
+
+  <section class="faq">
+    <h2>자주 묻는 질문</h2>
+    <div class="faq-item"><h3>크롤러를 열면 콘텐츠가 도용되지 않나요?</h3><p>AI 인용은 출처 표기를 동반하는 노출에 가깝습니다. 막아두면 ‘도용’이 아니라 ‘부재’가 됩니다 — 우리 자리에 경쟁 병원만 인용됩니다.</p></div>
+    <div class="faq-item"><h3>네이버 블로그만 쓰는데도 해당되나요?</h3><p>블로그는 robots.txt를 직접 만지지 못하지만, 글 구조(자기완결·질문형)는 동일하게 적용됩니다. 이 경우 콘텐츠 재구성 중심으로 진행합니다.</p></div>
+    <div class="faq-item"><h3>AIPICK 점수는 몇 점이면 되나요?</h3><p>절대 기준보다 ‘경쟁 병원 대비’ 위치가 중요합니다. 진단 후 우선순위대로 올리면 됩니다.</p></div>
+  </section>
+
+  <div class="cta-box">
+    <h3>우리 사이트는 몇 점일까요?</h3>
+    <p>크롤러·구조화·인용 가능성까지, 10초 무료 진단으로 항목별 점수를 확인하세요.</p>
+    <a href="../index.html#cta" class="btn">무료로 진단하기 →</a>
+  </div>
+</main>
+
+<div class="post-foot"><a href="../index.html#blog">← 다른 글 보기</a></div>
+
+<footer class="footer">
+  <div class="in">
+    <a href="../index.html"><img src="../assets/cotal-logo-white.png" alt="COTAL 코탤" /></a>
+    <span>주식회사 코탤 · <a href="../index.html#cta">무료 진단</a> · 문의 ceo@co-tal.com · © 2026 Cotal Inc.</span>
+  </div>
+</footer>
+</body>
+</html>
